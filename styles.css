@@ -1,0 +1,76 @@
+/* Basic styling for the body and HTML to fill the page, center content, and set a black background */
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000000; /* Black background for the terminal effect */
+}
+
+/* Styling for the <pre> tag inside the terminal to mimic the green text on black background typical of old terminals */
+#terminal pre {
+  color: #00ff00; /* Green text */
+  font-family: 'VT323', monospace; /* Retro monospace font */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Align with terminal content padding */
+  white-space: pre-wrap; /* Wrap long lines and preserve spaces/line breaks */
+  word-break: keep-all; /* Prevent breaking ASCII art */
+}
+
+/* Styling for the heading inside the terminal */
+#terminal h1 {
+  color: #00ff00; /* Green text */
+  font-family: 'VT323', monospace; /* Retro monospace font */
+  font-size: 1.2em; /* Slightly larger text for the heading */
+  margin-bottom: 0.5em; /* Space below the heading */
+}
+
+/* Styling for any additional headers if needed */
+#terminal h2 {
+  color: #00ff00; /* Green text */
+  font-family: 'VT323', monospace; /* Retro monospace font */
+  font-size: 0.5em; /* Smaller text for subheadings */
+  margin-bottom: 0.5em; /* Space below the heading */
+}
+
+/* Positioning and sizing of the terminal */
+#terminal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%; /* Adjust as needed */
+  height: 90%; /* Adjust as needed */
+  transform: translate(-50%, -50%);
+  background-color: #000000; /* Black background */
+}
+
+/* Font face import for VT323 font */
+@font-face {
+  font-family: 'VT323';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/vt323@latest/latin-400-normal.woff2) format('woff2'),
+       url(https://cdn.jsdelivr.net/fontsource/fonts/vt323@latest/latin-400-normal.woff) format('woff');
+}
+
+/* Applying VT323 font to terminal text */
+#terminal {
+  font-family: 'VT323', monospace;
+  font-size: 1em; /* Adjust size as necessary */
+}
+
+/* Responsive design for mobile devices */
+@media screen and (max-width: 480px) {
+  #terminal {
+    width: 100%; /* Full width on small screens */
+    height: auto; /* Flexible height */
+    transform: translate(-50%, -50%);
+  }
+
+  #terminal pre {
+    font-size: 0.5em; /* Smaller font size for ASCII art on mobile */
+    line-height: 1; /* Adjust line height for structure */
+    /* Additional adjustments as needed */
+  }
+}
